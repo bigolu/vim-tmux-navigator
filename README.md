@@ -1,3 +1,8 @@
+My Changes
+==================
+
+I've changed it so that if a user is within a vim window and it has multiple tabs then <C-h> and <C-l> will move between the tabs instead of windows.
+
 Vim Tmux Navigator
 ==================
 
