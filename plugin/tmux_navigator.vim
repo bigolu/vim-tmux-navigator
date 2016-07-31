@@ -98,6 +98,7 @@ function! s:VimTabCmd(direction)
             execute "tabp"
         else
             execute "tabn"
+        endif
     endif
 endfunction
 
