@@ -89,8 +89,14 @@ function! s:VimNavigate(direction)
   endtry
 endfunction
 
+" navigate vim tabs if there multiple ones open
 function! s:VimTabCmd(direction)
+    " save output of :tabs command into the '*' register
     silent execute "redir @* | tabs | redir END"
+
+    " check if > 1 tab is open.
+    " if the output of :tabs has the number 2 in it
+    " then there is more than one tab open
     if @* !~ "2"
         call s:TmuxWinCmd(a:direction)
     else
