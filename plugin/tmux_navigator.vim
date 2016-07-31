@@ -94,7 +94,7 @@ function! s:VimTabCmd(direction)
     if @* !~ "2"
         call s:TmuxWinCmd(a:direction)
     else
-        if a:direction = "h"
+        if direction = "h"
             execute "tabp"
         else
             execute "tabn"
