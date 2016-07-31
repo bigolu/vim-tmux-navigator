@@ -90,11 +90,11 @@ function! s:VimNavigate(direction)
 endfunction
 
 function! s:VimTabCmd(direction)
-    execute "redir @* | tabs | redir END"
+    silent execute "redir @* | tabs | redir END"
     if @* !~ "2"
         call s:TmuxWinCmd(a:direction)
     else
-        if direction = "h"
+        if a:direction == "h"
             execute "tabp"
         else
             execute "tabn"
@@ -106,7 +106,7 @@ command! TmuxNavigateDown call s:TmuxWinCmd('j')
 command! TmuxNavigateUp call s:TmuxWinCmd('k')
 command! TmuxNavigatePrevious call s:TmuxWinCmd('p')
 command! TabNavigateLeft call s:VimTabCmd('h')
-command! TabNaviagteRight call s:VimTabCmd('l')
+command! TabNavigateRight call s:VimTabCmd('l')
 
 if s:UseTmuxNavigatorMappings()
   nnoremap <silent> <c-h> :TabNavigateLeft<cr>
