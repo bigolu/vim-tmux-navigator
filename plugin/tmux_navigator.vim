@@ -97,7 +97,7 @@ function! s:VimTabCmd(direction)
     " check if > 1 tab is open.
     " if the output of :tabs has the number 2 in it
     " then there is more than one tab open
-    if @a !~ "2"
+    if @a !~ "Tab page 2"
         call s:TmuxWinCmd(a:direction)
     else
         if a:direction == "h"
